@@ -1,0 +1,6 @@
+#Ignore Semantic-Model and venv directory
+Semantic-Model/
+venv/
+
+#Ignore IDEE Specific condifguration
+.idea/

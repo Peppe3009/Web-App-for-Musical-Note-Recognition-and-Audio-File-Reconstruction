@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Index</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
+
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-10 d-flex align-items-center justify-content-end">
+
+                <nav class="nav-menu d-none d-lg-block">
+                    <ul>
+                        <li class="active"><a href="#hero">Home</a></li>
+                        <li><a href="#more_info">More Info</a></li>
+                        <li><a href="#create_music">Create Your Music</a></li>
+                        <li><a href="#your_music">Music Collection</a></li
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(../static/assets/img/banner1.jpg) ">
+            <div class="carousel-container">
+                <div class="container">
+                    <h2 class="animated fadeInDown">Applicazione web per la costruzione di tracce audio musicali dalle
+                        immagini
+                        delle note.</h2>
+
+                    <a href="#more_info" class="btn-get-started animated fadeInUp scrollto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= More Info Section ======= -->
+    <section id="more_info" class="about">
+        <div class="container-fluid">
+            <div class="section-title">
+                <h2>More Info</h2>
+                <h3>Obiettivo dell' <span>Elaborato</span></h3>
+            </div>
+            <div class="container" style="text-align: center;">
+          <span>L'obiettivo dell'eleborato e fornire uno strumento grazie al quale è possibile, a partire dall'immagine
+            di una sequenza di note, ricostruire la traccia audio musicale corrispondente. <br><br> In questo senso, è
+            stato
+            utilizzato un modello CNN che, prendendo in input le immagini in questione, ne riconosce le figure musicali
+            e ne restituisce il significato in formato testuale.
+            L'insieme delle informazioni restituite, viene quindi analizzato in modo tale da costruire la traccia audio
+            finale come concatenazioni di sample di note opportunamente tagliati a seconda del significato musicale e
+            della loro durata rispetto al tempo, in battiti per minuto, fornito dall'utente.</span>
+            </div>
+        </div>
+        </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Make Music Section ======= -->
+    <section id="create_music" class="services">
+        <div class="container-fluid">
+
+            <div class="section-title">
+                <h2>Create Your Music</h2>
+                <h3>Let's <span>Start</span></h3>
+                <p>Seleziona una o più immagini, scegli la velocità del brano e noi riscostruiremo la traccia audio per
+                    te.
+                </p>
+            </div>
+            <form action="/predict" method=post enctype=multipart/form-data>
+                <div class="container" >
+
+                    <div class="card" style="text-align: center;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Carica File</h5>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text"
+                                          id="inputGroup-sizing-sm">Velocità del brano (BPM)</span>
+                                    </div>
+                                    <input type="number" class="form-control" aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-sm" name="bpm" id="bpm" min="60"
+                                           max="218"
+                                           placeholder="60"
+                                           required>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input_file" name="input_file"
+                                           aria-describedby="inputGroupFileAddon01" accept="image/png, image/jpeg"
+                                           required>
+                                    <label class="custom-file-label" for="input_file">Choose file 1</label>
+                                </div>
+                            </div>
+                            <div class="form-check" style="text-align: left">
+                                <input type="checkbox" class="form-check-input" id="accordoCheck">
+                                <label class="form-check-label" for="accordoCheck">E' un accordo</label>
+                            </div>
+                            <br>
+                            <div class="custom-file" id="accordo2">
+                                <input type="file" class="custom-file-input" id="input_file2" name="input_file2"
+                                       aria-describedby="inputGroupFileAddon01" accept="image/png, image/jpeg">
+                                <label class="custom-file-label" for="input_file2">Choose file 2</label>
+                            </div>
+                            <br><br>
+                            <div class="custom-file" id="accordo3">
+                                <input type="file" class="custom-file-input" id="input_file3" name="input_file3"
+                                       aria-describedby="inputGroupFileAddon01" accept="image/png, image/jpeg">
+                                <label class="custom-file-label" for="input_file3">Choose file 3</label>
+
+                                <div class="section-title">
+                                    <p style="font-size: 10pt;"> Se l'accordo è di due note, carica due volte la stessa
+                                        immagine.</p>
+                                </div>
+                            </div>
+                            <br><br>
+                            <button type="submit" class="btn btn-info">Create Music</i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Your Music Section ======= -->
+    <section id="your_music" class="services">
+        <div class="container-fluid">
+
+            <div class="section-title">
+                <h2>Music Collection</h2>
+                <h3>Your Music is <span>Here</span></h3>
+                <p>Qui puoi visualizzare il risultato del processo di ricostruzione e le tracce che hai ricostruito fino a questo momento.</p>
+            </div>
+
+
+            <div class="container">
+                <div class="card1" style="text-align: center;">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Result</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">BPM = {{bpm}}</h6>
+
+                            <img src="{{image_path1}}">
+                            <img src="{{image_path2}}">
+                            <img src="{{image_path3}}">
+                            <br><br>
+                            <div class="container" style="text-align: center;">
+
+                                <audio controls>
+                                    <source src="{{path}}">
+                                </audio>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="section-title">
+                                <p>Le tue tracce fino ad ora</p>
+                            </div>
+                                {% if all_tracks | length > 0 %}
+
+                                    {%for track in all_tracks%}
+                                        <audio controls>
+                                            <source src="static/{{track}}">
+                                        </audio><br>
+
+                                    {%endfor%}
+                                    {%else%}
+                                    <p style="font-size: 11pt">Sembra non ci siano tracce da visualizzare.</p>
+                                {% endif %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Services Section -->
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+
+    <div class="footer-top">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 footer-links">
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-info" style="text-align: center;">
+                            <h3>Social Section</h3>
+                            <p>Sentiti libero di scrivermi per email o seguirmi su tutti i miei social.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="github"><i class="bx bxl-github bx-sm"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook bx-sm"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram bx-sm"></i></a>
+                                <a href="mailto:ventrone524@gmail.com" class="email"><i class="bx bx-envelope bx-sm"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Giuseppe Ventrone</span></strong>. All Rights Reserved
+        </div>
+
+    </div>
+</footer><!-- End Footer -->
+
+
+<!-- Vendor JS Files -->
+<script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+
+
+<!-- Template Main JS File -->
+<script src="../static/assets/js/main.js"></script>
+
+</body>
+
+
+<script>
+    $('#input_file').on('change', function () {
+
+        var fileName = $(this).val().split("\\")[2];
+
+        $(this).next('.custom-file-label').html(fileName);
+    })
+    $('#input_file2').on('change', function () {
+
+        var fileName = $(this).val().split("\\")[2];
+
+        $(this).next('.custom-file-label').html(fileName);
+    })
+    $('#input_file3').on('change', function () {
+
+        var fileName = $(this).val().split("\\")[2];
+
+        $(this).next('.custom-file-label').html(fileName);
+    })
+
+
+    $(document).ready(function () {
+        $('#accordo2').hide();
+        $('#accordo3').hide();
+        $('input[type="checkbox"]').click(function () {
+            if ($(this).prop("checked") === true) {
+                $('#accordo2').show();
+                $('#accordo3').show();
+                $('#input_file2').attr("required", true);
+                $('#input_file3').attr("required", true);
+
+            } else if ($(this).prop("checked") === false) {
+                $('#accordo2').hide();
+                $('#accordo3').hide();
+                $('#input_file2').attr("required", false);
+                $('#input_file3').attr("required", false);
+            }
+        });
+    });
+
+    {%if scroll %}
+        document.getElementById('{{ scroll }}').scrollIntoView();
+    {%endif %}
+
+</script>
+
+</html>
